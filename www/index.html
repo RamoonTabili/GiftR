@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+<!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://tabi0011.edumedia.ca 'unsafe-eval';connect-src http://tabi0011.edumedia.ca;">-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>GiftR</title>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link href="css/ratchet.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+       
+    <header class="bar bar-nav">
+        <h1>GiftR</h1>
+    </header>
+    
+    <div class="content" id="people">
+        <ul class="table-view" id="list"></ul>
+        <a class="special addPeep btn-block">Add person</a>
+    </div>
+    
+    <div id="personModal" class="modal">
+        <header class="bar bar-nav">
+           <a class="icon icon-close pull-right personCancel"></a>
+            <h1 class="modalHeader">Add or Edit Contact</h1>
+        </header>
+        <div class="content">
+            <div class="content-padded">
+               
+                <form class="input-group">
+                    <div class="input-row">
+                        <label>Full name</label>
+                        <input id="name" type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-row">
+                        <label>D.O.B.</label>
+                        <input id="date" placeholder="Birthday" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                    </div>
+                </form>
+                
+                <p class="content-padded">
+                    <button class="btn btn-negative btn-block btn-outlined personCancel">
+                        <span class="icon icon-close"> Cancel</span>
+                    </button>
+                    <button class="btn btn-negative btn-block personDel">
+                        <span class="icon icon-trash"></span>
+                    </button>
+                    <button class="btn btn-positive btn-block personSave">
+                        <span class="icon icon-check"> Save</span>
+                    </button>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+   
+<!--
+    <nav class="bar bar-tab">
+        <a class="tab-item active" href="#" data-transition="slide-out">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Events</span>
+        </a>
+        <a class="tab-item" href="create.html" data-transition="slide-in">
+        <span class="icon icon-compose"></span>
+        <span class="tab-label">Create</span>
+        </a>
+    </nav>
+-->
+    
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/ratchet.min.js"></script>
+        <script type="text/javascript" src="js/moment-with-locales.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
